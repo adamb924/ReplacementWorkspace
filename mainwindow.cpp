@@ -503,6 +503,7 @@ void MainWindow::batchTransform()
 	if (file->open(QFile::ReadOnly))
 	{
 	    QTextStream *stream = new QTextStream(file);
+            stream->setCodec("UTF-8");
 	    content = stream->readAll();
 
 	    content = doReplacements(content);
