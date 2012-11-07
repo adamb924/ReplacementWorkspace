@@ -3,62 +3,36 @@
 
 #include <QtGui/QMainWindow>
 
-#include <QtCore/QVariant>
-#include <QtGui/QAction>
-#include <QtGui/QApplication>
-#include <QtGui/QButtonGroup>
-#include <QtGui/QComboBox>
-#include <QtGui/QHBoxLayout>
-#include <QtGui/QLabel>
-#include <QtGui/QLineEdit>
-#include <QtGui/QListWidget>
-#include <QtGui/QMainWindow>
-#include <QtGui/QMenuBar>
-#include <QtGui/QStatusBar>
-#include <QtGui/QTableWidget>
-#include <QtGui/QTableView >
-#include <QtGui/QVBoxLayout>
-#include <QtGui/QWidget>
-#include <QtGui/QTextEdit>
-#include <QtGui/QCheckBox>
-#include <QtGui/QPushButton>
-#include <QtGui/QMenu>
-#include <QtGui/QMenuBar>
-#include <QtGui/QMessageBox>
-#include <QtGui/QFileDialog>
-#include <QUrl>
-#include <QIODevice>
-#include <QTextStream>
-#include <QTextCodec>
-#include <QXmlStreamWriter>
-
 #include "ReplacementItem.h"
+
+class ReplacementEngine;
+class QTextEdit;
+class QTableWidget;
+class QPushButton;
 
 class MainWindow : public QMainWindow
 {
 	Q_OBJECT
 
 public:
-//	MainWindow(QWidget *parent = 0);
 	MainWindow();
 	~MainWindow();
 
 private:
-	QHBoxLayout *horizontalLayout, *buttonLayout, *button2Layout;
-	QPushButton *bAdd, *bRemove, *bUp, *bDown;
-	QVBoxLayout *verticalLayout, *leftLayout;
 	QTextEdit *before, *after;
 	QTableWidget *tableWidget;
+	QPushButton *bAdd, *bRemove, *bUp, *bDown;
 	QMenuBar *menu;
 	QMenu *schemaMenu, *textMenu;
 	QAction *openSchema, *saveSchema, *openText, *updateText, *batch, *copy;
 	QAction *aAdd, *aRemove, *aUp, *aDown;
-	QList<ReplacementItem*> list;
 
+	ReplacementEngine *mRe;
+
+	void setupUi();
 	void DrawList();
 	void UpdateAfter();
 	void GetListFromTable();
-	QString doReplacements(QString str);
 
 private slots:
 	void slUp();
