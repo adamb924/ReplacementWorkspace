@@ -2,7 +2,6 @@
 #define READSETTINGS_H
 
 #include <QXmlDefaultHandler>
-#include <QWidget>
 
 #include "ReplacementItem.h"
 

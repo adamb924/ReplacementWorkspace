@@ -10,6 +10,8 @@
 #include <QTextCodec>
 #include <QXmlStreamWriter>
 
+#include <QtWidgets>
+
 #include <QtDebug>
 #include <QFile>
 #include <QTextStream>
