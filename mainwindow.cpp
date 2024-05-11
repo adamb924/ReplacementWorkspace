@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 #include "ReplacementItem.h"
-#include "readsettings.h"
+#include "ReadSettings.h"
 
 #include <QtCore>
 #include <QtGui>
